@@ -5,7 +5,6 @@
 		'.addToPlaylistButton[title=""]',
 		'button[title="Close"]',
 	];
-
 	addToPlaylist(selectorsAll);
 
 	function addToPlaylist (_selectors) {
@@ -18,8 +17,9 @@
 				if (selectors.length) {
 					addToPlaylist(selectors);
 				} else {
-					document.querySelector('.soundList__item').remove();
-
+					//document.querySelector('.badgeList__item').remove();
+					const item = document.querySelectorAll('.badgeList__item'); //reverse order
+					item [item.length -1].remove();	//reverse order
 					setTimeout(() => addToPlaylist([...selectorsAll]), 500);
 				}
 			})
@@ -32,8 +32,9 @@
 	function selecting (selector) {
 		return new Promise((resolve, reject) => {
 			const pooling = setInterval(() => {
-				const element = document.querySelector(selector);
-
+				//const element = document.querySelector(selector);
+				const elements = document.querySelectorAll(selector); //reverse order
+				const element = elements[elements.length - 1]; //reverse order
 				if (element) {
 					resolve(element);
 				}
