@@ -5,6 +5,7 @@
 		'.addToPlaylistButton[title=""]',
 		'button[title="Close"]',
 	];
+	
 	addToPlaylist(selectorsAll);
 
 	function addToPlaylist (_selectors) {
